@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <WKNavigationDelegate,
+WKUIDelegate,WKScriptMessageHandler>
 
 @property (strong, nonatomic) IBOutlet WKWebView *webView;
+@property (strong,nonatomic) WKWebView *popWindow;
 @property (strong, nonatomic) NSString *fullURL;
 @property(nonatomic) BOOL allowsLinkPreview;
 @property(nonatomic, assign) id<UINavigationControllerDelegate,UIImagePickerControllerDelegate>delegate;
